@@ -37,6 +37,11 @@ namespace DevMath
             throw new NotImplementedException();
         }
 
+        public static float Angle(Vector2 lhs, Vector2 rhs)
+        {
+            throw new NotImplementedException();
+        }
+
         public static Vector2 operator +(Vector2 lhs, Vector2 rhs)
         {
             throw new NotImplementedException();
