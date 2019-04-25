@@ -52,6 +52,11 @@ namespace DevMath
             throw new NotImplementedException();
         }
 
+        public static Vector2 operator -(Vector2 v)
+        {
+            throw new NotImplementedException();
+        }
+
         public static Vector2 operator *(Vector2 lhs, float scalar)
         {
             throw new NotImplementedException();
