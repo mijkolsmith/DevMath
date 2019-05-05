@@ -45,6 +45,11 @@ namespace DevMath
             return (float)Math.Atan2(dy, dx);
         }
 
+        public static Vector2 DirectionFromAngle(float angle)
+        {
+            return new Vector2((float)Math.Cos(DevMath.DegToRad(angle)), (float)Math.Sin(DevMath.DegToRad(angle)));
+        }
+
         public static Vector2 operator +(Vector2 lhs, Vector2 rhs)
         {
             return new Vector2(lhs.x + rhs.x, lhs.y + rhs.y);
