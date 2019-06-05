@@ -20,8 +20,7 @@ namespace DevMath
 
         public bool CollidesWith(Circle circle)
         {
-            var diff = circle.Position - Position;
-            return diff.Magnitude < (circle.Radius + Radius);
+            throw new NotImplementedException();
         }
     }
 }
