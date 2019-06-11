@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DevMath
 {
-    public class Vector4
+    public struct Vector4
     {
         public float x;
         public float y;
