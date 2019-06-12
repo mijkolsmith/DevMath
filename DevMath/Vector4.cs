@@ -31,6 +31,11 @@ namespace DevMath
             this.w = w;
         }
 
+        public static implicit operator Vector4(Vector3 v)
+        {
+            throw new NotImplementedException();
+        }
+
         public static float Dot(Vector4 lhs, Vector4 rhs)
         {
             throw new NotImplementedException();
