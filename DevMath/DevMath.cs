@@ -16,16 +16,18 @@ namespace DevMath
 
         public static float DistanceTraveled(float startVelocity, float acceleration, float time)
         {
+			//s = ut + 1/2at^2
 			return startVelocity * time + (acceleration * time * time) / 2;
         }
 
         public static float Clamp(float value, float min, float max)
         {
-            if (min <= value && value <= max)
+			if (max < min)
 			{
-				return value;
+				throw new Exception("Min cannot be larger than max");
 			}
-			if (value < min)
+
+			/*if (value < min)
 			{
 				return min;
 			}
@@ -33,11 +35,9 @@ namespace DevMath
 			{
 				return max;
 			}
-			if (max < min)
-			{
-				throw new Exception("Min is higher than max");
-			}
-			throw new Exception("Could not clamp value");
+			return value;*/
+
+			return Math.Max(Math.Min(value, max), min);
         }
 
         public static float RadToDeg(float angle)

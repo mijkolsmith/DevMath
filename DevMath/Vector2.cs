@@ -18,7 +18,15 @@ namespace DevMath
 
         public Vector2 Normalized
         {
-            get { return new Vector2(x / (float)Math.Sqrt(Magnitude), y / (float)Math.Sqrt(Magnitude)); }
+            get
+			{
+				//float.Epsilon
+				if (Magnitude > 0)
+				{
+					return new Vector2(x / Magnitude, y / Magnitude);
+				}
+				else return new Vector2(0, 0);
+			}
         }
 
         public Vector2(float x, float y)
@@ -41,7 +49,9 @@ namespace DevMath
         public static float Angle(Vector2 lhs, Vector2 rhs)
         {
 			Vector2 v = lhs - rhs;
-			return DevMath.RadToDeg((float)Math.Atan2(v.x, v.y));
+			//- is needed because it turns the wrong way otherwise, and the .5 * pi 
+			//is because otherwise it will have a difference in position compared to the mouse
+			return -(float)Math.Atan2(v.x, v.y) - .5f * (float)Math.PI;
 		}
 
         public static Vector2 DirectionFromAngle(float angle)

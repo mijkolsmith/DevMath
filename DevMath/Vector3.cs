@@ -19,7 +19,17 @@ namespace DevMath
 
         public Vector3 Normalized
         {
-			get { return new Vector3(x / (float)Math.Sqrt(Magnitude), y / (float)Math.Sqrt(Magnitude), z / (float)Math.Sqrt(Magnitude)); }
+			get
+			{
+				if (Magnitude > 0)
+				{
+					return new Vector3(x / (float)Math.Sqrt(Magnitude), y / (float)Math.Sqrt(Magnitude), z / (float)Math.Sqrt(Magnitude));
+				}
+				else
+				{
+					return new Vector3(0, 0, 0);
+				}
+			}
 		}
 
         public Vector3(float x, float y, float z)
@@ -40,7 +50,7 @@ namespace DevMath
 		}
 
         public static Vector3 Cross(Vector3 lhs, Vector3 rhs)
-        {
+		{ //https://www.mathsisfun.com/algebra/vectors-cross-product.html
 			return new Vector3(lhs.y * rhs.z - lhs.z * rhs.y, lhs.z * rhs.x - lhs.x * rhs.z, lhs.x * rhs.y - lhs.y * rhs.x);
 		}
 

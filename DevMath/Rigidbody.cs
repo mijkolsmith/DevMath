@@ -15,11 +15,15 @@ namespace DevMath
 
         public float mass = 1.0f;
         public float force = 150.0f;
-        public float dragCoefficient = .47f;
+		public float frictionCoefficient = .47f;
+		public float gravityAcceleration = 9.81f;
 
         public void AddForce(Vector2 forceDirection, float deltaTime)
         {
-            throw new NotImplementedException();
+			//Fnet = F - Ffriction = F - frictionCoefficient * Fn = F - frictionCoefficient * mass * 9.81;
+			//Velocity = a * t = Fnet / m * t;
+			float netForce = force - frictionCoefficient * mass * gravityAcceleration;
+			Velocity = (forceDirection * (netForce / mass)) * deltaTime;
         }
     }
 }

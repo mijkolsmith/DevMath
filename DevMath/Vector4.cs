@@ -20,7 +20,17 @@ namespace DevMath
 
         public Vector4 Normalized
         {
-			get { return new Vector4(x / (float)Math.Sqrt(Magnitude), y / (float)Math.Sqrt(Magnitude), z / (float)Math.Sqrt(Magnitude) , w / (float)Math.Sqrt(Magnitude)); }
+			get
+			{
+				if (Magnitude > 0)
+				{
+					return new Vector4(x / (float)Math.Sqrt(Magnitude), y / (float)Math.Sqrt(Magnitude), z / (float)Math.Sqrt(Magnitude), w / (float)Math.Sqrt(Magnitude));
+				}
+				else
+				{
+				return new Vector3(0, 0, 0);
+				}
+			}
 		}
 
         public Vector4(float x, float y, float z, float w)
