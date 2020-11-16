@@ -48,6 +48,7 @@ namespace DevMath
 
         public static float Angle(Vector2 lhs, Vector2 rhs)
         {
+			//https://stackoverflow.com/questions/21483999/using-atan2-to-find-angle-between-two-vectors
 			Vector2 v = lhs - rhs;
 			//- is needed because it turns the wrong way otherwise, and the .5 * pi 
 			//is because otherwise it will have a difference in position compared to the mouse

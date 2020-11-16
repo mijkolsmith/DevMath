@@ -25,7 +25,7 @@ namespace DevMath
         }
 
 		public bool CollidesWith(Line line)
-		{ // https://www.scratchapixel.com/lessons/3d-basic-rendering/minimal-ray-tracer-rendering-simple-shapes/ray-sphere-intersection
+		{ //https://www.scratchapixel.com/lessons/3d-basic-rendering/minimal-ray-tracer-rendering-simple-shapes/ray-sphere-intersection
 			Vector2 O = line.Position;
 			Vector2 D = line.Direction;
 			Vector2 C = Position;
