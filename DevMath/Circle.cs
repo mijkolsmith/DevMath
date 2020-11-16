@@ -37,8 +37,12 @@ namespace DevMath
 				return false;
 			}
 
-			Vector2 tca = O + D * tcaLength;
-			float dLength = (float)Math.Sqrt(L.Magnitude * L.Magnitude - tca.Magnitude * tca.Magnitude);
+			if ((Position - line.Position).Magnitude - Radius > line.Length)
+			{
+				return false;
+			}
+
+			float dLength = (float)Math.Sqrt(L.Magnitude * L.Magnitude - tcaLength * tcaLength);
 			if (dLength < 0 || dLength > Radius)
 			{
 				return false;

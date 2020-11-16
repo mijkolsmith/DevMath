@@ -49,10 +49,10 @@ namespace DevMath
         public static float Angle(Vector2 lhs, Vector2 rhs)
         {
 			//https://stackoverflow.com/questions/21483999/using-atan2-to-find-angle-between-two-vectors
-			Vector2 v = lhs - rhs;
+			Vector2 v = rhs- lhs;
 			//- is needed because it turns the wrong way otherwise, and the .5 * pi 
 			//is because otherwise it will have a difference in position compared to the mouse
-			return -(float)Math.Atan2(v.x, v.y) - .5f * (float)Math.PI;
+			return (float)Math.Atan2(v.y, v.x);
 		}
 
         public static Vector2 DirectionFromAngle(float angle)
